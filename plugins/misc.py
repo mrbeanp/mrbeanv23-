@@ -151,21 +151,7 @@ async def imdb_search(client, message):
 @Client.on_callback_query(filters.regex('^imdb'))
 async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     i, movie = quer_y.data.split('#')
-    imdb = await get_poster(query=movie, id=True)
-    btn = [
-            [
-                InlineKeyboardButton(
-                    text=f"{imdb.get('title')} - {imdb.get('year')}",
-                    url=imdb['url'],
-                )
-            ],
-            [
-                InlineKeyboardButton(
-                    text=f"GROUP",
-                    url="https://t.me/mallu_movie_search"
-                )
-            ],
-        ]
+    imdb = await get_poster(query=movie, id=True]
     message = quer_y.message.reply_to_message or quer_y.message
     if imdb:
         caption = IMDB_TEMPLATE.format(
