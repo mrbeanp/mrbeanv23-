@@ -392,6 +392,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
+        buttons = [
+                    [
+                        InlineKeyboardButton('🎖 DEPLOY YOURS 🎖', url='https://t.me/mallu_movie_search')
+                    ]
+                    ]
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
